@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "anti-shorts",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "YouTube Shorts를 완전히 숨기고, Shorts 링크는 메인 페이지로 돌려보냅니다. 끄기 버튼은 없습니다.",
   "permissions": ["declarativeNetRequest"],
   "host_permissions": [

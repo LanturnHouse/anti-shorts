@@ -61,3 +61,19 @@ test('canonical 링크로 숏츠 판정', () => {
   assert.equal(rules.shortsVerdictFromCanonical('https://www.youtube.com/watch?v=other', v), null);
   assert.equal(rules.shortsVerdictFromCanonical('', v), null);
 });
+
+test('목록 전체를 감싸는 컨테이너는 숨기지 않는다', () => {
+  // 이 요소들은 추천 목록·검색 결과 전체를 감싼다. :has() 로 숨기면 목록이 통째로 사라진다.
+  const containers = [
+    'ytd-item-section-renderer',
+    'ytm-item-section-renderer',
+    'ytd-section-list-renderer',
+    'ytm-section-list-renderer',
+    'ytd-watch-next-secondary-results-renderer',
+    'ytd-rich-grid-renderer',
+  ];
+  for (const sel of rules.selectorsFor('all')) {
+    const head = sel.split(/[:\[\s]/)[0];
+    assert.ok(!containers.includes(head), `목록 컨테이너를 숨기는 셀렉터: ${sel}`);
+  }
+});

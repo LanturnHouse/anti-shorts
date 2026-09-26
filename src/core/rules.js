@@ -32,8 +32,9 @@
     has('ytd-rich-section-renderer', 'ytd-rich-shelf-renderer[is-shorts]'),
     has('ytd-rich-section-renderer', 'ytm-shorts-lockup-view-model'),
     has('ytd-rich-section-renderer', 'ytm-shorts-lockup-view-model-v2'),
+    // 주의: ytd-item-section-renderer 는 영상 오른쪽 추천 목록/검색 결과 "전체"를 감싸므로
+    // :has() 로 숨기면 안 된다. 숏츠 선반 자체만 숨긴다.
     'ytd-reel-shelf-renderer',
-    has('ytd-item-section-renderer', 'ytd-reel-shelf-renderer'),
     'grid-shelf-view-model:has(ytm-shorts-lockup-view-model)',
     'grid-shelf-view-model:has(ytm-shorts-lockup-view-model-v2)',
     'ytm-shorts-lockup-view-model',
@@ -71,7 +72,6 @@
     has('ytm-rich-section-renderer', 'ytm-reel-shelf-renderer'),
     has('ytm-rich-section-renderer', 'ytm-shorts-lockup-view-model'),
     has('ytm-rich-section-renderer', 'ytm-shorts-lockup-view-model-v2'),
-    has('ytm-item-section-renderer', 'ytm-reel-shelf-renderer'),
     'ytm-shorts-lockup-view-model',
     'ytm-shorts-lockup-view-model-v2',
 
