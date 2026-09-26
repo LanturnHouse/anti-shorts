@@ -1,0 +1,11 @@
+{
+  "name": "anti-shorts",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Block YouTube Shorts everywhere, with no off switch.",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "build:chrome": "node scripts/build.mjs chrome",
+    "test": "node --test \"test/*.test.mjs\""
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "anti-shorts",
+  "version": "0.2.0",
+  "description": "YouTube Shorts를 완전히 숨기고, Shorts 링크는 메인 페이지로 돌려보냅니다. 끄기 버튼은 없습니다.",
+  "permissions": ["declarativeNetRequest"],
+  "host_permissions": [
+    "*://www.youtube.com/*",
+    "*://youtube.com/*",
+    "*://m.youtube.com/*"
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      { "id": "block_shorts", "enabled": true, "path": "dnr-rules.json" }
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://www.youtube.com/*",
+        "*://youtube.com/*",
+        "*://m.youtube.com/*"
+      ],
+      "js": ["core/rules.js", "core/blocker.js", "content.js"],
+      "run_at": "document_start",
+      "all_frames": false
+    }
+  ]
+}
