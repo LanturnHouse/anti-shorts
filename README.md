@@ -1,6 +1,6 @@
 # anti-shorts
 
-YouTube Shorts를 **끌 수 없게** 차단하는 프로젝트입니다.
+YouTube Shorts를 차단하는 프로젝트입니다.
 확장 프로그램 안에 on/off 스위치는 없습니다. 차단을 풀려면 `chrome://extensions`에서 확장 프로그램을 끄거나 삭제해야 합니다.
 
 ## 차단하는 것 (PC 크롬)
@@ -45,8 +45,3 @@ test/                   node:test 단위 테스트 (npm test)
 ```
 
 **유튜브가 화면 구조를 바꿔 Shorts가 다시 보이면** 대부분 `src/core/rules.js`의 셀렉터 목록만 고치면 됩니다.
-
-## 범위
-
-PC 크롬 전용으로 마무리한 프로젝트입니다. 모바일 버전(공식 앱, ReVanced 패치 등)은 검토 후 진행하지 않기로 했습니다.
-`rules.js`의 `mobileSelectors`는 PC 크롬에서 `m.youtube.com`을 열 때를 위해 남겨 두었습니다.
